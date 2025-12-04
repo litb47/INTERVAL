@@ -20,7 +20,7 @@
             colors: {
               brand: {
                 dark: '#0f172a', // Slate 900
-                accent: '#0ea5e9', // Sky 500 - energetic but clean
+                accent: '#0ea5e9', // Sky 500
                 light: '#f8fafc', // Slate 50
                 gray: '#64748b', // Slate 500
               }
@@ -29,17 +29,19 @@
         }
       }
     </script>
-  <script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
-    "react/": "https://aistudiocdn.com/react@^19.2.1/",
-    "react": "https://aistudiocdn.com/react@^19.2.1"
-  }
-}
-</script>
-</head>
+    <script type="importmap">
+    {
+      "imports": {
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+        "react-dom": "https://aistudiocdn.com/react-dom@^19.2.1",
+        "react/": "https://aistudiocdn.com/react@^19.2.1/",
+        "react": "https://aistudiocdn.com/react@^19.2.1"
+      }
+    }
+    </script>
+  </head>
   <body class="bg-brand-light text-brand-dark antialiased">
     <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>

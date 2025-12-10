@@ -91,6 +91,17 @@
         max-width: 100%;
         height: auto;
       }
+
+      /* Video background styling */
+      .hero-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.4;
+      }
     </style>
   </head>
   <body class="bg-brand-light text-brand-dark antialiased">
@@ -116,7 +127,7 @@
           title: "INTERVAL",
           subtitle: "The Premier Workspace for Fitness Professionals & Creators",
           cta: "Book Your Space",
-          backgroundImage: "https://picsum.photos/1920/1080?grayscale" 
+          backgroundVideo: "New_Hero_Interval.mp4"
         },
         features: [
           {
@@ -215,7 +226,7 @@
         );
       };
 
-      // --- 4. COMPONENT: HERO SECTION WITH FORM ---
+      // --- 4. COMPONENT: HERO SECTION WITH FORM AND VIDEO BACKGROUND ---
       const HeroSection = ({ onScrollToForm }) => {
         const [heroFormData, setHeroFormData] = useState({
           fullName: '',
@@ -270,20 +281,25 @@
 
         return (
           <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-brand-dark py-24 md:py-0">
+            {/* Video Background */}
             <div className="absolute inset-0 z-0">
-              <img 
-                src={SITE_CONTENT.hero.backgroundImage} 
-                alt="Gym Background" 
-                className="w-full h-full object-cover opacity-40"
-              />
+              <video 
+                className="hero-video"
+                autoPlay
+                loop
+                muted
+                playsInline
+              >
+                <source src={SITE_CONTENT.hero.backgroundVideo} type="video/mp4" />
+              </video>
               <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-90"></div>
             </div>
 
             <div className="relative z-10 container mx-auto px-6 w-full">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-7xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center max-w-7xl mx-auto">
                 
-                {/* Left Side - Contact Form */}
-                <div className="w-full order-2 lg:order-1">
+                {/* Left Side - Contact Form (2 columns) */}
+                <div className="w-full order-2 lg:order-1 lg:col-span-2">
                   <div className="bg-white/10 backdrop-blur-md p-6 md:p-8 rounded-3xl border border-white/20 shadow-2xl max-w-md mx-auto lg:ml-0 animate-fade-in">
                     <div className="text-center mb-6">
                       <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-2">Request Access</h2>
@@ -367,12 +383,12 @@
                   </div>
                 </div>
 
-                {/* Right Side - Logo and Subtitle */}
-                <div className="text-center lg:text-left space-y-6 order-1 lg:order-2">
+                {/* Right Side - Logo and Subtitle (3 columns - MORE SPACE) */}
+                <div className="text-center lg:text-left space-y-8 order-1 lg:order-2 lg:col-span-3">
                   <div className="flex justify-center lg:justify-start mb-8">
-                    <img src={LOGO_SRC} alt="INTERVAL" className="h-24 md:h-32 lg:h-40 logo-img animate-fade-in-up" />
+                    <img src={LOGO_SRC} alt="INTERVAL" className="h-32 md:h-40 lg:h-56 xl:h-64 logo-img animate-fade-in-up" />
                   </div>
-                  <p className="font-sans text-xl md:text-2xl lg:text-3xl text-gray-300 font-light leading-relaxed animate-fade-in-up">
+                  <p className="font-sans text-xl md:text-2xl lg:text-3xl xl:text-4xl text-gray-300 font-light leading-relaxed animate-fade-in-up">
                     {SITE_CONTENT.hero.subtitle}
                   </p>
                 </div>

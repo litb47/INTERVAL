@@ -4,17 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>INTERVAL | Elevate Your Craft</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230ea5e9'%3E%3Cpath d='M13 2L3 14h9l-1 8 10-12h-9l1-8z'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/png" href="logo.png">
     
-    <!-- 1. Tailwind CSS (Free Public CDN) -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- 2. Fonts (Google Fonts - Free) -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- 3. React & Babel (unpkg - Free Public CDN) -->
+    <!-- React & Babel -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -55,11 +55,6 @@
       }
     </script>
     <style>
-      /* RTL Support */
-      * {
-        direction: rtl;
-      }
-      
       /* Ensure sticky header stays on top */
       .mobile-sticky-nav {
         position: fixed;
@@ -90,6 +85,13 @@
       @keyframes spin {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
+      }
+
+      /* Logo styling */
+      .logo-img {
+        filter: brightness(0) invert(1);
+        max-width: 100%;
+        height: auto;
       }
     </style>
   </head>
@@ -205,8 +207,8 @@
               </a>
             </div>
             
-            <div className="font-display font-bold text-white text-xl tracking-wider truncate mr-2">
-              INTERVAL
+            <div className="shrink-0">
+              <img src="logo.png" alt="INTERVAL" className="h-8 logo-img" />
             </div>
           </nav>
         );
@@ -266,7 +268,7 @@
         };
 
         return (
-          <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-brand-dark py-20 md:py-0">
+          <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-brand-dark py-24 md:py-0">
             <div className="absolute inset-0 z-0">
               <img 
                 src={SITE_CONTENT.hero.backgroundImage} 
@@ -276,12 +278,22 @@
               <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-90"></div>
             </div>
 
-            <div className="relative z-10 container mx-auto px-6">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
+            <div className="relative z-10 container mx-auto px-6 w-full">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-7xl mx-auto">
                 
+                {/* Right Side - Logo and Subtitle */}
+                <div className="text-center lg:text-right space-y-6">
+                  <div className="flex justify-center lg:justify-end mb-8">
+                    <img src="logo.png" alt="INTERVAL" className="h-24 md:h-32 lg:h-40 logo-img animate-fade-in-up" />
+                  </div>
+                  <p className="font-sans text-xl md:text-2xl lg:text-3xl text-gray-300 font-light leading-relaxed animate-fade-in-up">
+                    {SITE_CONTENT.hero.subtitle}
+                  </p>
+                </div>
+
                 {/* Left Side - Contact Form */}
-                <div className="order-2 lg:order-1">
-                  <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 shadow-2xl max-w-md mx-auto lg:mr-0 lg:ml-auto">
+                <div className="w-full">
+                  <div className="bg-white/10 backdrop-blur-md p-6 md:p-8 rounded-3xl border border-white/20 shadow-2xl max-w-md mx-auto lg:mr-0 animate-fade-in">
                     <div className="text-center mb-6">
                       <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-2">הרשם עכשיו</h2>
                       <p className="text-gray-400 text-sm">הצטרף לקהילת המקצוענים</p>
@@ -362,16 +374,6 @@
                       </form>
                     )}
                   </div>
-                </div>
-
-                {/* Right Side - Title and Subtitle */}
-                <div className="text-center lg:text-right order-1 lg:order-2">
-                  <h1 className="font-display text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-white tracking-tight mb-6 animate-fade-in-up">
-                    {SITE_CONTENT.hero.title}
-                  </h1>
-                  <p className="font-sans text-lg md:text-2xl text-gray-300 mb-10 font-light leading-relaxed">
-                    {SITE_CONTENT.hero.subtitle}
-                  </p>
                 </div>
 
               </div>
@@ -602,8 +604,8 @@
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">יצירת קשר</a>
               </div>
               <div className="text-center md:text-right order-1 md:order-2">
-                <h3 className="text-2xl font-display font-bold text-white tracking-tight">INTERVAL</h3>
-                <p className="text-sm text-gray-500 mt-2">© {new Date().getFullYear()} Interval Studio. כל הזכויות שמורות.</p>
+                <img src="logo.png" alt="INTERVAL" className="h-8 logo-img mx-auto md:mx-0 mb-2" />
+                <p className="text-sm text-gray-500">© {new Date().getFullYear()} Interval Studio. כל הזכויות שמורות.</p>
               </div>
             </div>
           </footer>

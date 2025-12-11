@@ -114,24 +114,25 @@
         width: 64px;
         height: 64px;
         border-radius: 50%;
-        background: linear-gradient(135deg, rgba(14, 165, 233, 0.85) 0%, rgba(2, 132, 199, 0.85) 100%);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        box-shadow: 0 8px 24px rgba(14, 165, 233, 0.3);
+        background: linear-gradient(135deg, rgba(14, 165, 233, 0.5) 0%, rgba(2, 132, 199, 0.5) 100%);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        box-shadow: 0 8px 24px rgba(14, 165, 233, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.2);
         cursor: pointer;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         display: flex;
         align-items: center;
         justify-content: center;
-        border: none;
         position: relative;
         overflow: hidden;
       }
       
       .fab-main:hover {
         transform: scale(1.1);
-        background: linear-gradient(135deg, rgba(14, 165, 233, 0.95) 0%, rgba(2, 132, 199, 0.95) 100%);
-        box-shadow: 0 12px 32px rgba(14, 165, 233, 0.4);
+        background: linear-gradient(135deg, rgba(14, 165, 233, 0.7) 0%, rgba(2, 132, 199, 0.7) 100%);
+        box-shadow: 0 12px 32px rgba(14, 165, 233, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.3);
       }
       
       .fab-main:active {
@@ -139,10 +140,11 @@
       }
       
       .fab-main.open {
-        background: linear-gradient(135deg, rgba(239, 68, 68, 0.85) 0%, rgba(220, 38, 38, 0.85) 100%);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        box-shadow: 0 8px 24px rgba(239, 68, 68, 0.3);
+        background: linear-gradient(135deg, rgba(239, 68, 68, 0.5) 0%, rgba(220, 38, 38, 0.5) 100%);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        box-shadow: 0 8px 24px rgba(239, 68, 68, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.2);
       }
       
       /* FAB pulse effect */
@@ -152,7 +154,7 @@
         width: 100%;
         height: 100%;
         border-radius: 50%;
-        background: rgba(14, 165, 233, 0.3);
+        background: rgba(14, 165, 233, 0.15);
         animation: fab-pulse 2s ease-out infinite;
       }
       
@@ -187,10 +189,13 @@
         display: flex;
         align-items: center;
         gap: 12px;
-        background: white;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
         padding: 12px 16px;
         border-radius: 28px;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
         cursor: pointer;
         transition: all 0.3s ease;
         text-decoration: none;
@@ -227,7 +232,9 @@
       
       .fab-item:hover {
         transform: scale(1.05);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.5);
       }
       
       .fab-item:active {
